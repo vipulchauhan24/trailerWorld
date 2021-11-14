@@ -1,0 +1,25 @@
+.sidebar__home{
+  min-width: 11em;
+  height: 100vh;
+  display: block;
+  padding: 0 1rem;
+}
+.app_header{
+  height: 2em;
+  width: 100%;
+}
+.list__cards{
+  overflow: auto;
+  column-gap: 1em;
+}
+.card-image {
+  cursor: pointer;
+  width: 10em;
+}
+h2{
+  margin-bottom: 1rem !important;
+}
+
+.cards__container{
+  margin-bottom: 1rem;
+}
