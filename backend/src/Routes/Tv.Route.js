@@ -7,5 +7,7 @@ router.get('/genre', tvController.getGenreTv)
 router.get('/top-rated', tvController.getTopRatedTv)
 router.get('/airing-today', tvController.getAiringToday)
 router.post('/videos', tvController.getVideos)
+router.post('/details', tvController.getTvDetails)
+router.post('/cast', tvController.getCastDetails)
 
 module.exports = router;

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { Route, Routes,useNavigate,useLocation } from 'react-router-dom'
-import Movies from './Movies'
-import Tv from './Tv'
-import Menu from './Menu'
+import Movies from '../Pages/Movies'
+import Tv from '../Pages/Tv'
+import Menu from '../Shared/Menu'
 
 function Home() {
     let navigate = useNavigate();

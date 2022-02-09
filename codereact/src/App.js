@@ -5,8 +5,8 @@ import Layout from './Layout';
 function App() {
   return (
     <div>
-        <header className="app_header"></header>
-        <BrowserRouter>
+      <header className="app_header"></header>
+      <BrowserRouter>
         <Layout />
       </BrowserRouter>
     </div>

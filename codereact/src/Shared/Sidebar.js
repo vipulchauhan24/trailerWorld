@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 
 function Sidebar() {
@@ -12,8 +12,8 @@ function Sidebar() {
                 Menu
             </p>
             <ul className="menu-list">
-                <li><Link to="/" className={pathname === '/tv' ? 'is-active' : ''}><ion-icon name="home-sharp"></ion-icon>Home</Link></li>
-                <li><Link to="/discover" className={pathname === '/discover' ? 'is-active' : ''}><ion-icon name="film-sharp"></ion-icon>Discover</Link></li>
+                <li><NavLink to="/" className={pathname.includes('/tv') || pathname.includes('/movies') ? 'is-active' : ''}><ion-icon name="home-sharp"></ion-icon>Home</NavLink></li>
+                <li><NavLink to="/discover" className={pathname === '/discover' ? 'is-active' : ''}><ion-icon name="film-sharp"></ion-icon>Discover</NavLink></li>
                 <li><ion-icon name="information-sharp"></ion-icon>Coming soon</li>
             </ul>
             </aside>

@@ -7,3 +7,13 @@ export const airingTodayTv = base_url + '/tv/airing-today';
 export const topRatedTv = base_url + '/tv/top-rated';
 export const genre = base_url + '/tv/genre';
 export const videoTV = base_url + '/tv/videos';
+export const tvDetails = base_url + '/tv/details';
+export const tvCast = base_url + '/tv/cast';
+
+
+export const popularMovie = base_url + '/movie/popular';
+export const trendingMovie = base_url + '/movie/trending';
+export const airingTodayMovie = base_url + '/movie/airing-today';
+export const topRatedMovie = base_url + '/movie/top-rated';
+export const genreMovie = base_url + '/movie/genre';
+export const videoMovie = base_url + '/movie/videos';

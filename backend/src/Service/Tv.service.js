@@ -12,22 +12,13 @@ const airingTodayTv = base + '/tv/airing_today?api_key=' + key + '&language=en-U
 
 makeRequest = (callback, url) => {
     axios.get(url).then(function (response) {
+        console.log('response',response)
       return callback(response.data)
     }).catch(function (error) {
         if(error.response){
             return callback(null,error.response.data)
         }
-        return callback(null,'Network error')
-      })
-}
-getVideoList = (callback,id) => {
-    const videoTvURL = base + `/tv/${id}/videos?api_key=` + key + '&language=en-US&page=1&with_network=213';
-    axios.get(videoTvURL).then(function (response) {
-      return callback(response.data)
-    }).catch(function (error) {
-        if(error.response){
-            return callback(null,error.response.data)
-        }
+        console.log(error)
         return callback(null,'Network error')
       })
 }
@@ -52,5 +43,21 @@ exports.getAiringToday = (callback) =>{
 }
 
 exports.getVideos = (videoId, callback) =>{
-    getVideoList(callback, videoId);
+    const videoTvURL = base + `/tv/${videoId}/videos?api_key=` + key + '&language=en-US&page=1';
+    axios.get(videoTvURL).then(function (response) {
+      return callback(response.data)
+    }).catch(function (error) {
+        if(error.response){
+            return callback(null,error.response.data)
+        }
+        return callback(null,'Network error')
+      })
+}
+
+exports.getTvDetails = (id, callback) =>{
+    makeRequest(callback, `${base}/tv/${id}?api_key=${key}&language=en-US&page=1&with_network=213`);
+}
+
+exports.getCastDetails = (id, callback) =>{
+    makeRequest(callback, `${base}/tv/${id}/credits?api_key=${key}&language=en-US&page=1&with_network=213`);
 }

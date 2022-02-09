@@ -1,11 +1,9 @@
 import React from 'react'
 
-function Movies() {
+export default function moviesDetails() {
     return (
         <div>
-            movies
+            
         </div>
     )
 }
-
-export default Movies

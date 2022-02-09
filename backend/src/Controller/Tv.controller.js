@@ -59,7 +59,28 @@ exports.getAiringToday = (req,res,next) =>{
         return res.status(200).send({success:1, series:response})
     })
 }
-
+exports.getTvDetails = (req,res,next) =>{
+    tvService.getTvDetails(req.body.id, (response, error)=>{
+        if(error){
+            if(error.status_message){
+                return res.status(400).send({success:0,message: error.status_message})
+            }
+            return res.status(400).send({success:0,message: 'Bad request'})
+        }
+        return res.status(200).send({success:1, series:response})
+    })
+}
+exports.getCastDetails = (req,res,next) =>{
+    tvService.getCastDetails(req.body.id, (response, error)=>{
+        if(error){
+            if(error.status_message){
+                return res.status(400).send({success:0,message: error.status_message})
+            }
+            return res.status(400).send({success:0,message: 'Bad request'})
+        }
+        return res.status(200).send({success:1, series:response})
+    })
+}
 exports.getVideos = (req,res,next) =>{
     tvService.getVideos(req.body.videoId,(response, error)=>{
         if(error){
